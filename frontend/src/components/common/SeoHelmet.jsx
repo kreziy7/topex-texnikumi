@@ -39,9 +39,10 @@ const SeoHelmet = ({
       {description && <meta name="twitter:description" content={description} />}
       <meta name="twitter:image" content={img} />
 
-      <link rel="alternate" hreflang="uz" href={canonical || 'https://topextexnikum.uz/'} />
-      <link rel="alternate" hreflang="ru" href={`${canonical ? canonical.replace('https://topextexnikum.uz', 'https://topextexnikum.uz/ru') : 'https://topextexnikum.uz/ru'}`} />
+      {/* Языки переключаются через localStorage (i18next), отдельных URL нет —
+          hreflang на несуществующие /ru, /en страницы НЕ генерируем, это дубли для Google */}
       <link rel="alternate" hreflang="x-default" href={canonical || 'https://topextexnikum.uz/'} />
+      <link rel="alternate" hreflang="uz" href={canonical || 'https://topextexnikum.uz/'} />
 
       {children}
     </Helmet>

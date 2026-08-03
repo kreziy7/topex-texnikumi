@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:prerender": "vite build && node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "keywords": [],
@@ -32,6 +33,7 @@
     "@vitejs/plugin-react": "^4.7.0",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.13",
+    "puppeteer": "^23.11.1",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.19",
     "vercel": "^53.1.0",
